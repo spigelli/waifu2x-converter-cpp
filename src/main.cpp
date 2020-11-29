@@ -743,7 +743,7 @@ int main(int argc, char** argv)
 	check_supported_formats();
 
 	// definition of command line arguments
-	TCLAP::CmdLine cmd("waifu2x OpenCV Fork - https://github.com/DeadSix27/waifu2x-converter-cpp", ' ', "waifu2x-converter-cpp-docker" + " (" + "master" + "-" + "commit_number" + ")", true);
+	TCLAP::CmdLine cmd("waifu2x OpenCV Fork - https://github.com/DeadSix27/waifu2x-converter-cpp", ' ', "waifu2x-converter-cpp-docker (master-commit_number)", true);
 	cmd.setOutput(new CustomFailOutput());
 
 	TCLAP::ValueArg<std::string> cmdInput("i", "input",
