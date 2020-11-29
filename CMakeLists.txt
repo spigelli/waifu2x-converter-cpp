@@ -1,4 +1,3 @@
-<html><body>You are being <a href="https://raw.githubusercontent.com/Wykerd/waifu2x-converter-cpp/master/CMakeLists.txt">redirected</a>.</body></html><html><body>You are being <a href="https://raw.githubusercontent.com/Wykerd/waifu2x-converter-cpp/master/CMakeLists.txt">redirected</a>.</body></html>cmake_minimum_required(VERSION 3.8)
 enable_language(CXX)
 
 project(waifu2xcpp)
