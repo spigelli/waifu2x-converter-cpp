@@ -2,14 +2,10 @@ FROM nvidia/cuda:11.1-devel-ubuntu18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-#FROM debian:buster-slim as builder
-#COPY --from=builder /usr/local/ /usr/local/
-
 LABEL maintainer="Isaac Spiegel"
 
 WORKDIR /
 
-# apt-get install
 RUN set -ex \
     && apt-get update
 
@@ -66,21 +62,6 @@ RUN set -ex \
     && apt install -y ocl-icd-opencl-dev
 
 # Minimal command line test.
-RUN set -ex \ 
-    # && echo "deb http://ftp.de.debian.org/debian sid main" | tee -a /etc/apt/sources.list \
-    # && add-apt-repository "deb http://ftp.de.debian.org/debian sid main" \
-    # && apt-get update --allow-unauthenticated \ 
-    # && apt install -y libopencv-imgcodecs3.2 -o APT::Immediate-Configure=0 \
-    # && apt install -y libcharls2
-
-# RUN set -ex \
-#     && find / -name "libopencv_imgproc*" \
-#     && ln /usr/share/lintian/overrides/libopencv-imgcodecs4.2  /usr/share/lintian/overrides/libopencv-imgcodecs3.2 \
-#     && ln /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.2  /usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2 \
-#     && ln /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.2  /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2 \
-#     && ln /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.2  /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2
-    # && ln /usr/share/doc/libopencv-imgcodecs4.2  /usr/share/doc/libopencv-imgcodecs3.2
-
 RUN set -ex \
     && ldconfig \
     && waifu2x-converter-cpp -h
