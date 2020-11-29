@@ -743,8 +743,8 @@ int main(int argc, char** argv)
 	check_supported_formats();
 
 	// definition of command line arguments
-	//TCLAP::CmdLine cmd("waifu2x OpenCV Fork - https://github.com/DeadSix27/waifu2x-converter-cpp", ' ', std::string(GIT_TAG) + " (" + GIT_BRANCH + "-" + GIT_COMMIT_HASH + ")", true);
-	//cmd.setOutput(new CustomFailOutput());
+	TCLAP::CmdLine cmd("waifu2x OpenCV Fork - https://github.com/DeadSix27/waifu2x-converter-cpp", ' ', "waifu2x-converter-cpp-docker" + " (" + "master" + "-" + "commit_number" + ")", true);
+	cmd.setOutput(new CustomFailOutput());
 
 	TCLAP::ValueArg<std::string> cmdInput("i", "input",
 		"path to input image file or directory (you should use the full path)", true, "",
@@ -801,9 +801,9 @@ int main(int argc, char** argv)
 		false, 2.0, "double", cmd
 	);
 	
-	//TCLAP::ValueArg<std::string> cmdModelPath("", "model-dir", "path to custom model directory (don't append last / )",
-	//	false, DEFAULT_MODELS_DIRECTORY, "string", cmd
-	//);
+	TCLAP::ValueArg<std::string> cmdModelPath("", "model-dir", "path to custom model directory (don't append last / )",
+		false, "/usr/local/bin/waifu2x/models_rgb" , "string", cmd
+	);
 	
 	TCLAP::ValueArg<int> cmdNumberOfJobs("j", "jobs", "number of threads launching at the same time",
 		false, 0, "integer", cmd
