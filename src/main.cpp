@@ -744,7 +744,7 @@ int main(int argc, char** argv)
 
 	// definition of command line arguments
 	//TCLAP::CmdLine cmd("waifu2x OpenCV Fork - https://github.com/DeadSix27/waifu2x-converter-cpp", ' ', std::string(GIT_TAG) + " (" + GIT_BRANCH + "-" + GIT_COMMIT_HASH + ")", true);
-	cmd.setOutput(new CustomFailOutput());
+	//cmd.setOutput(new CustomFailOutput());
 
 	TCLAP::ValueArg<std::string> cmdInput("i", "input",
 		"path to input image file or directory (you should use the full path)", true, "",
@@ -887,7 +887,7 @@ int main(int argc, char** argv)
 #else
 	fs::path input = cmdInput.getValue();
 	_tstring tmpOutput = cmdOutput.getValue();
-	modelDir = cmdModelPath.getValue();
+	modelDir = "/usr/local/bin/waifu2x/models_rgb/";
 #endif
 	if (fs::is_directory(input) && (tmpOutput.back() != _T('/')) && _tcscmp(tmpOutput.c_str(), _T("auto")) != 0)
 	{
