@@ -52,7 +52,7 @@ RUN set -ex \
 RUN set -ex \
     && mkdir -p /usr/src \
     && cd /usr/src \
-    && git clone https://github.com/DeadSix27/waifu2x-converter-cpp.git \
+    && git clone https://github.com/spigelli/waifu2x-converter-cpp.git \
     && cd waifu2x-converter-cpp \
     && mkdir out \
     && cd out \
