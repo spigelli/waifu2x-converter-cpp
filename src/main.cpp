@@ -802,7 +802,7 @@ int main(int argc, char** argv)
 	);
 	
 	TCLAP::ValueArg<std::string> cmdModelPath("", "model-dir", "path to custom model directory (don't append last / )",
-		false, "/usr/local/bin/waifu2x-converter-cpp/models_rgb" , "string", cmd
+		false, "/usr/local/bin/waifu2x/models_rgb" , "string", cmd
 	);
 	
 	TCLAP::ValueArg<int> cmdNumberOfJobs("j", "jobs", "number of threads launching at the same time",
@@ -887,7 +887,7 @@ int main(int argc, char** argv)
 #else
 	fs::path input = cmdInput.getValue();
 	_tstring tmpOutput = cmdOutput.getValue();
-	modelDir = "/usr/local/bin/waifu2x-converter-cpp/models_rgb/";
+	modelDir = "/usr/local/bin/waifu2x/models_rgb";
 #endif
 	if (fs::is_directory(input) && (tmpOutput.back() != _T('/')) && _tcscmp(tmpOutput.c_str(), _T("auto")) != 0)
 	{

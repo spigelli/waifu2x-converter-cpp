@@ -49,7 +49,8 @@ RUN set -ex \
     && mkdir -p /usr/src \
     && cd /usr/src \
     && git clone https://github.com/spigelli/waifu2x-converter-cpp.git \
-    && cd waifu2x-converter-cpp \
+    && mv waifu2x-converter-cpp/ waifu2x/ \
+    && cd waifu2x \
     && mkdir out \
     && cd out \
     && cmake .. \
